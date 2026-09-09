@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>نقل — منصة نقل العفش والبضائع في السعودية</title>
+<meta name="description" content="نقل منصة سعودية لطلب نقل العفش والأثاث والبضائع والمركبات بسعر واضح وسائقين معتمدين." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A6B5A'/%3E%3Ctext x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3EN%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#FAF9F6; --surface:#FFFFFF; --ink:#182420; --muted:#5C6B66; --border:#DEE5E1;
+  --accent:#0A6B5A; --accent-dark:#084F42; --accent-ink:#FFFFFF; --accent-soft:#E7F1EE;
+  --gold:#C79A4B; --radius:16px; --radius-sm:10px;
+  --shadow: 0 1px 2px rgba(24,36,32,.04), 0 8px 24px rgba(24,36,32,.06);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans Arabic","IBM Plex Sans",system-ui,sans-serif;line-height:1.6;}
+[dir="ltr"] body, .ltr{font-family:"IBM Plex Sans",system-ui,sans-serif;}
+h1,h2,h3{font-family:"IBM Plex Sans Arabic","IBM Plex Serif",Georgia,serif;font-weight:700;text-wrap:balance;margin:0;}
+.ltr h1,.ltr h2,.ltr h3{font-family:"IBM Plex Serif",Georgia,serif;}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+.eyebrow{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);display:inline-block;}
+
+/* Header */
+header{position:sticky;top:0;z-index:40;background:rgba(250,249,246,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--accent-dark);text-decoration:none;}
+.logo .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;}
+.navlinks{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500;}
+.navlinks a{text-decoration:none;color:var(--ink);opacity:.8;}
+.navlinks a:hover{opacity:1;color:var(--accent-dark);}
+.navlinks{display:none;}
+@media(min-width:860px){.navlinks{display:flex;}}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.langbar{display:flex;gap:2px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:3px;}
+.langbar button{border:none;background:transparent;color:var(--muted);font:inherit;font-weight:600;font-size:13px;padding:6px 14px;border-radius:999px;cursor:pointer;}
+.langbar button[aria-selected="true"]{background:var(--accent);color:#fff;}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;}
+.btn:hover{transform:translateY(-1px);}
+.btn.primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(10,107,90,.28);}
+.btn.primary:hover{background:var(--accent-dark);}
+.btn.ghost{background:var(--surface);color:var(--ink);border-color:var(--border);}
+.btn.ghost:hover{border-color:var(--accent);}
+.btn.soon{background:var(--accent-soft);color:var(--accent-dark);cursor:default;}
+.btn.soon:hover{transform:none;}
+.btn svg{width:18px;height:18px;flex:none;}
+
+/* Hero */
+.hero{padding:76px 0 60px;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto -10%;height:520px;background:radial-gradient(60% 60% at 70% 30%, rgba(10,107,90,.10), transparent 70%);pointer-events:none;}
+.hero-grid{display:grid;gap:48px;align-items:center;position:relative;}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr;}}
+.hero h1{font-size:clamp(32px,4.6vw,52px);line-height:1.15;letter-spacing:-.01em;margin-bottom:18px;}
+.hero h1 .accent{color:var(--accent);}
+.hero p.lead{color:var(--muted);font-size:18px;max-width:52ch;margin:0 0 30px;}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px;}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap;}
+.hero-stats div{min-width:110px;}
+.hero-stats .num{font-family:"IBM Plex Serif",serif;font-size:26px;font-weight:700;color:var(--accent-dark);}
+.hero-stats .lbl{font-size:13px;color:var(--muted);}
+
+.hero-art{position:relative;}
+.hero-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;}
+.route-row{display:flex;align-items:center;gap:12px;padding:12px 0;}
+.route-dot{width:12px;height:12px;border-radius:50%;background:var(--accent);flex:none;}
+.route-dot.end{background:var(--gold);}
+.route-line{width:2px;background:var(--border);flex:none;align-self:stretch;margin:0 5px;}
+.route-col{display:flex;flex-direction:column;align-items:center;}
+.route-text{flex:1;}
+.route-text .t1{font-size:12px;color:var(--muted);}
+.route-text .t2{font-weight:600;font-size:15px;}
+.price-chip{margin-top:10px;background:var(--accent-soft);color:var(--accent-dark);border-radius:12px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700;}
+.price-chip .sar{font-size:13px;font-weight:600;opacity:.75;}
+.hero-badge{position:absolute;top:-16px;inset-inline-end:-16px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;}
+.hero-badge svg{width:20px;height:20px;color:var(--accent);}
+
+/* Sections */
+section{padding:64px 0;}
+.section-head{max-width:640px;margin-bottom:40px;}
+.section-head h2{font-size:clamp(24px,3vw,34px);margin-bottom:12px;}
+.section-head p{color:var(--muted);font-size:16px;margin:0;}
+
+.grid3{display:grid;gap:20px;grid-template-columns:1fr;}
+@media(min-width:720px){.grid3{grid-template-columns:repeat(3,1fr);}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;}
+.card .icon{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent-dark);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.card .icon svg{width:24px;height:24px;}
+.card h3{font-size:18px;margin-bottom:8px;}
+.card p{color:var(--muted);font-size:14.5px;margin:0;}
+
+.steps{display:grid;gap:0;grid-template-columns:1fr;position:relative;}
+@media(min-width:800px){.steps{grid-template-columns:repeat(4,1fr);gap:20px;}}
+.step{position:relative;padding:24px 0;border-top:1px solid var(--border);}
+@media(min-width:800px){.step{border-top:none;padding:0;}}
+.step .n{font-family:"IBM Plex Serif",serif;font-size:34px;font-weight:700;color:var(--accent-soft);-webkit-text-stroke:1.5px var(--accent);line-height:1;margin-bottom:14px;}
+.step h3{font-size:16.5px;margin-bottom:6px;}
+.step p{color:var(--muted);font-size:14px;margin:0;}
+
+.fleet{display:grid;gap:16px;grid-template-columns:repeat(2,1fr);}
+@media(min-width:720px){.fleet{grid-template-columns:repeat(4,1fr);}}
+.fleet .card{text-align:center;padding:22px 16px;}
+.fleet .icon{margin:0 auto 14px;}
+
+.band{background:var(--accent-dark);color:#fff;border-radius:24px;padding:52px 36px;display:grid;gap:30px;}
+@media(min-width:860px){.band{grid-template-columns:1.1fr .9fr;align-items:center;}}
+.band h2{color:#fff;font-size:clamp(22px,3vw,30px);margin-bottom:14px;}
+.band p{color:rgba(255,255,255,.78);font-size:15.5px;max-width:48ch;margin:0 0 22px;}
+.band .btn.primary{background:#fff;color:var(--accent-dark);box-shadow:none;}
+.band .btn.primary:hover{background:var(--accent-soft);}
+.band-list{list-style:none;margin:0;padding:0;display:grid;gap:14px;}
+.band-list li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:rgba(255,255,255,.92);}
+.band-list svg{width:20px;height:20px;flex:none;color:#fff;margin-top:1px;}
+
+.trust{display:grid;gap:18px;grid-template-columns:1fr;}
+@media(min-width:720px){.trust{grid-template-columns:repeat(4,1fr);}}
+.trust .item{display:flex;flex-direction:column;gap:10px;}
+.trust .icon{width:40px;height:40px;color:var(--accent);}
+.trust h3{font-size:15.5px;}
+.trust p{color:var(--muted);font-size:13.5px;margin:0;}
+
+footer{border-top:1px solid var(--border);padding:44px 0 30px;color:var(--muted);font-size:13.5px;}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;margin-bottom:24px;}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--accent-dark);font-size:16px;}
+.foot-links{display:flex;gap:20px;flex-wrap:wrap;list-style:none;margin:0;padding:0;}
+.foot-links a{text-decoration:none;}
+.foot-links a:hover{color:var(--accent-dark);}
+.foot-disclaimer{max-width:70ch;line-height:1.7;}
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo"><span class="mark">ن</span><span id="brand-name">نقل</span></a>
+    <ul class="navlinks">
+      <li><a href="#services" data-k="nav.services">الخدمات</a></li>
+      <li><a href="#how" data-k="nav.how">كيف يعمل</a></li>
+      <li><a href="#fleet" data-k="nav.fleet">المركبات</a></li>
+      <li><a href="#drivers" data-k="nav.drivers">كن سائقًا</a></li>
+      <li><a href="#contact" data-k="nav.contact">تواصل معنا</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="langbar" role="tablist" aria-label="Language">
+        <button role="tab" id="tab-ar" aria-selected="true" onclick="setLang('ar')">العربية</button>
+        <button role="tab" id="tab-en" aria-selected="false" onclick="setLang('en')">English</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow" data-k="hero.eyebrow">منصة النقل السعودية</div>
+        <h1 data-k="hero.h1">انقل عفشك وبضائعك <span class="accent" data-k="hero.h1accent">بسعر واضح من البداية</span></h1>
+        <p class="lead" data-k="hero.lead">اطلب سائقًا معتمدًا لنقل الأثاث أو البضائع أو المركبات، واعرف السعر النهائي قبل تأكيد الطلب — بدون مفاجآت وبدون مساومة.</p>
+        <div class="hero-ctas">
+          <a class="btn soon" href="#contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l18-9-9 18-2-7-7-2z"/></svg>
+            <span data-k="hero.ctaSoon">قريبًا على Google Play</span>
+          </a>
+          <a class="btn ghost" href="#drivers" data-k="hero.ctaDriver">كن سائقًا معنا</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="num">4</div><div class="lbl" data-k="hero.stat1">أنواع مركبات</div></div>
+          <div><div class="num">100%</div><div class="lbl" data-k="hero.stat2">سعر واضح مسبقًا</div></div>
+          <div><div class="num">24/7</div><div class="lbl" data-k="hero.stat3">تتبع الطلب</div></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
+          <span data-k="hero.badge">سائقون معتمدون</span>
+        </div>
+        <div class="hero-card">
+          <div class="route-row">
+            <div class="route-col">
+              <div class="route-dot"></div>
+              <div class="route-line" style="height:34px"></div>
+              <div class="route-dot end"></div>
+            </div>
+            <div style="flex:1">
+              <div class="route-text" style="margin-bottom:18px">
+                <div class="t1" data-k="hero.pickup">موقع الاستلام</div>
+                <div class="t2" data-k="hero.pickupCity">الرياض — حي النرجس</div>
+              </div>
+              <div class="route-text">
+                <div class="t1" data-k="hero.dropoff">موقع التسليم</div>
+                <div class="t2" data-k="hero.dropoffCity">الرياض — حي الملقا</div>
+              </div>
+            </div>
+          </div>
+          <div class="price-chip">
+            <span data-k="hero.finalPrice">السعر النهائي</span>
+            <span>215<span class="sar" data-k="hero.sar"> ر.س</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-k="services.eyebrow">الخدمات</div>
+        <h2 data-k="services.h2">كل ما تحتاج نقله، في مكان واحد</h2>
+        <p data-k="services.p">اختر نوع الشحنة وسنطابقك تلقائيًا بالمركبة والسائق المناسبين.</p>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-6 9 6v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 21V12h6v9"/></svg></div>
+          <h3 data-k="services.c1.h">عفش ومنزل</h3>
+          <p data-k="services.c1.p">نقل أثاث وأغراض المنزل بعناية، مع خيارات تغليف وفك وتركيب.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+          <h3 data-k="services.c2.h">بضائع تجارية</h3>
+          <p data-k="services.c2.p">شحنات المتاجر والمستودعات بمركبات تناسب الكمية والوزن.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14M6 17V9l2-4h8l2 4v8"/><circle cx="8" cy="19" r="1.6"/><circle cx="16" cy="19" r="1.6"/></svg></div>
+          <h3 data-k="services.c3.h">نقل المركبات</h3>
+          <p data-k="services.c3.p">نقل السيارات المعطلة أو غير الجاهزة للقيادة عبر سطحة معتمدة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-k="how.eyebrow">كيف يعمل نقل</div>
+        <h2 data-k="how.h2">أربع خطوات، من الطلب حتى التسليم</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><h3 data-k="how.s1.h">اطلب السعر</h3><p data-k="how.s1.p">حدد ما تريد نقله وموقعي الاستلام والتسليم، واحصل على السعر النهائي فورًا.</p></div>
+        <div class="step"><div class="n">02</div><h3 data-k="how.s2.h">أكّد الطلب</h3><p data-k="how.s2.p">راجع التفاصيل وأكّد — بدون رسوم مخفية أو تفاوض لاحق.</p></div>
+        <div class="step"><div class="n">03</div><h3 data-k="how.s3.h">تطابق مع سائق</h3><p data-k="how.s3.p">نطابقك تلقائيًا بأقرب سائق معتمد يملك المركبة المناسبة.</p></div>
+        <div class="step"><div class="n">04</div><h3 data-k="how.s4.h">تتبع وقيّم</h3><p data-k="how.s4.p">تابع حالة طلبك خطوة بخطوة، وقيّم تجربتك بعد التسليم.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET -->
+  <section id="fleet">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-k="fleet.eyebrow">المركبات</div>
+        <h2 data-k="fleet.h2">مركبة مناسبة لكل حمولة</h2>
+      </div>
+      <div class="fleet">
+        <div class="card"><div class="icon" style="margin-inline:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 16V8a1 1 0 011-1h9l4 4v5a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></div><h3 data-k="fleet.pickup">وانيت</h3></div>
+        <div class="card"><div class="icon" style="margin-inline:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 15V9a1 1 0 011-1h11l4 4v3a1 1 0 01-1 1H3a1 1 0 01-1-1z"/><circle cx="6.5" cy="16.5" r="1.6"/><circle cx="16" cy="16.5" r="1.6"/></svg></div><h3 data-k="fleet.dina">دينا</h3></div>
+        <div class="card"><div class="icon" style="margin-inline:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 14V7a1 1 0 011-1h9v8H1zM11 9h5l4 3v3H11z"/><circle cx="6" cy="17" r="1.6"/><circle cx="17" cy="17" r="1.6"/></svg></div><h3 data-k="fleet.truck">شاحنة</h3></div>
+        <div class="card"><div class="icon" style="margin-inline:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 17h4l2-6h6l3 6h5M8 11V6h6v5"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg></div><h3 data-k="fleet.tow">سطحة</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRIVERS BAND -->
+  <section id="drivers">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <div class="eyebrow" style="color:var(--gold)" data-k="drivers.eyebrow">للسائقين وأصحاب المركبات</div>
+          <h2 data-k="drivers.h2">اكسب دخلاً إضافيًا كسائق نقل معتمد</h2>
+          <p data-k="drivers.p">قدّم طلب انضمام بمركبتك (وانيت، دينا، شاحنة، أو سطحة)، واستقبل طلبات نقل حقيقية بجدول تحدده أنت بعد اعتماد حسابك.</p>
+          <a class="btn primary" href="mailto:hello@naqqel.online?subject=%D8%B7%D9%84%D8%A8%20%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D9%83%D8%B3%D8%A7%D8%A6%D9%82" data-k="drivers.cta">قدّم الآن عبر البريد</a>
+        </div>
+        <ul class="band-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-k="drivers.l1">تحكم كامل بوقت عملك — اتصل وافصل متى شئت</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-k="drivers.l2">رصيد أرباح واضح لكل طلب تنفذه</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span data-k="drivers.l3">توجيه مباشر لموقع الاستلام والتسليم</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow" data-k="trust.eyebrow">لماذا نقل</div>
+        <h2 data-k="trust.h2">بُنيت لتكون واضحة وموثوقة</h2>
+      </div>
+      <div class="trust">
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"/></svg><h3 data-k="trust.i1.h">سائقون تم التحقق منهم</h3><p data-k="trust.i1.p">كل سائق يمر بمراجعة قبل استقبال أول طلب.</p></div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg><h3 data-k="trust.i2.h">تسعير شفاف</h3><p data-k="trust.i2.p">السعر يُحسب على خوادمنا ويظهر لك قبل التأكيد — لا مفاجآت.</p></div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><h3 data-k="trust.i3.h">دعم بالعربية</h3><p data-k="trust.i3.p">تجربة مصممة للسوق السعودي من الأساس.</p></div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg><h3 data-k="trust.i4.h">نغطي الرياض حاليًا</h3><p data-k="trust.i4.p">ونتوسع تدريجيًا لمدن أخرى قريبًا.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background:var(--surface);border-top:1px solid var(--border);">
+    <div class="wrap" style="text-align:center;max-width:640px;">
+      <div class="eyebrow" style="justify-content:center" data-k="contact.eyebrow">تواصل معنا</div>
+      <h2 data-k="contact.h2" style="margin-bottom:14px">لديك استفسار أو تريد أن تكون أول من يجرب نقل؟</h2>
+      <p style="color:var(--muted);margin-bottom:26px" data-k="contact.p">راسلنا وسنعاود التواصل معك بخصوص الإطلاق أو الشراكات أو الانضمام كسائق.</p>
+      <a class="btn primary" href="mailto:hello@naqqel.online" data-k="contact.cta">hello@naqqel.online</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><span class="mark" style="width:26px;height:26px;border-radius:7px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;">ن</span> <span data-k="foot.brand">نقل</span></div>
+      <ul class="foot-links">
+        <li><a href="#services" data-k="nav.services">الخدمات</a></li>
+        <li><a href="#how" data-k="nav.how">كيف يعمل</a></li>
+        <li><a href="#drivers" data-k="nav.drivers">كن سائقًا</a></li>
+        <li><a href="https://claude.ai/code/artifact/eeb5226f-cd8f-47b4-9eeb-6d8f6671e44f" target="_blank" rel="noopener" data-k="foot.privacy">سياسة الخصوصية</a></li>
+        <li><a href="mailto:hello@naqqel.online" data-k="foot.contact">تواصل معنا</a></li>
+      </ul>
+    </div>
+    <p class="foot-disclaimer" data-k="foot.disclaimer">نقل منصة تقنية تربط بين طالبي خدمة النقل ومقدمي الخدمة المستقلين المعتمدين، وليست شركة نقل أو ناقلًا بحد ذاتها.</p>
+    <p style="margin-top:16px" data-k="foot.copyright">© 2026 نقل. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<script>
+const dict = {
+  ar: {
+    'brand-name': 'نقل',
+    'nav.services':'الخدمات','nav.how':'كيف يعمل','nav.fleet':'المركبات','nav.drivers':'كن سائقًا','nav.contact':'تواصل معنا',
+    'hero.eyebrow':'منصة النقل السعودية',
+    'hero.h1':'انقل عفشك وبضائعك ', 'hero.h1accent':'بسعر واضح من البداية',
+    'hero.lead':'اطلب سائقًا معتمدًا لنقل الأثاث أو البضائع أو المركبات، واعرف السعر النهائي قبل تأكيد الطلب — بدون مفاجآت وبدون مساومة.',
+    'hero.ctaSoon':'قريبًا على Google Play','hero.ctaDriver':'كن سائقًا معنا',
+    'hero.stat1':'أنواع مركبات','hero.stat2':'سعر واضح مسبقًا','hero.stat3':'تتبع الطلب',
+    'hero.badge':'سائقون معتمدون','hero.pickup':'موقع الاستلام','hero.pickupCity':'الرياض — حي النرجس',
+    'hero.dropoff':'موقع التسليم','hero.dropoffCity':'الرياض — حي الملقا','hero.finalPrice':'السعر النهائي','hero.sar':' ر.س',
+    'services.eyebrow':'الخدمات','services.h2':'كل ما تحتاج نقله، في مكان واحد','services.p':'اختر نوع الشحنة وسنطابقك تلقائيًا بالمركبة والسائق المناسبين.',
+    'services.c1.h':'عفش ومنزل','services.c1.p':'نقل أثاث وأغراض المنزل بعناية، مع خيارات تغليف وفك وتركيب.',
+    'services.c2.h':'بضائع تجارية','services.c2.p':'شحنات المتاجر والمستودعات بمركبات تناسب الكمية والوزن.',
+    'services.c3.h':'نقل المركبات','services.c3.p':'نقل السيارات المعطلة أو غير الجاهزة للقيادة عبر سطحة معتمدة.',
+    'how.eyebrow':'كيف يعمل نقل','how.h2':'أربع خطوات، من الطلب حتى التسليم',
+    'how.s1.h':'اطلب السعر','how.s1.p':'حدد ما تريد نقله وموقعي الاستلام والتسليم، واحصل على السعر النهائي فورًا.',
+    'how.s2.h':'أكّد الطلب','how.s2.p':'راجع التفاصيل وأكّد — بدون رسوم مخفية أو تفاوض لاحق.',
+    'how.s3.h':'تطابق مع سائق','how.s3.p':'نطابقك تلقائيًا بأقرب سائق معتمد يملك المركبة المناسبة.',
+    'how.s4.h':'تتبع وقيّم','how.s4.p':'تابع حالة طلبك خطوة بخطوة، وقيّم تجربتك بعد التسليم.',
+    'fleet.eyebrow':'المركبات','fleet.h2':'مركبة مناسبة لكل حمولة','fleet.pickup':'وانيت','fleet.dina':'دينا','fleet.truck':'شاحنة','fleet.tow':'سطحة',
+    'drivers.eyebrow':'للسائقين وأصحاب المركبات','drivers.h2':'اكسب دخلاً إضافيًا كسائق نقل معتمد',
+    'drivers.p':'قدّم طلب انضمام بمركبتك (وانيت، دينا، شاحنة، أو سطحة)، واستقبل طلبات نقل حقيقية بجدول تحدده أنت بعد اعتماد حسابك.',
+    'drivers.cta':'قدّم الآن عبر البريد','drivers.l1':'تحكم كامل بوقت عملك — اتصل وافصل متى شئت','drivers.l2':'رصيد أرباح واضح لكل طلب تنفذه','drivers.l3':'توجيه مباشر لموقع الاستلام والتسليم',
+    'trust.eyebrow':'لماذا نقل','trust.h2':'بُنيت لتكون واضحة وموثوقة',
+    'trust.i1.h':'سائقون تم التحقق منهم','trust.i1.p':'كل سائق يمر بمراجعة قبل استقبال أول طلب.',
+    'trust.i2.h':'تسعير شفاف','trust.i2.p':'السعر يُحسب على خوادمنا ويظهر لك قبل التأكيد — لا مفاجآت.',
+    'trust.i3.h':'دعم بالعربية','trust.i3.p':'تجربة مصممة للسوق السعودي من الأساس.',
+    'trust.i4.h':'نغطي الرياض حاليًا','trust.i4.p':'ونتوسع تدريجيًا لمدن أخرى قريبًا.',
+    'contact.eyebrow':'تواصل معنا','contact.h2':'لديك استفسار أو تريد أن تكون أول من يجرب نقل؟',
+    'contact.p':'راسلنا وسنعاود التواصل معك بخصوص الإطلاق أو الشراكات أو الانضمام كسائق.','contact.cta':'hello@naqqel.online',
+    'foot.brand':'نقل','foot.privacy':'سياسة الخصوصية','foot.contact':'تواصل معنا',
+    'foot.disclaimer':'نقل منصة تقنية تربط بين طالبي خدمة النقل ومقدمي الخدمة المستقلين المعتمدين، وليست شركة نقل أو ناقلًا بحد ذاتها.',
+    'foot.copyright':'© 2026 نقل. جميع الحقوق محفوظة.'
+  },
+  en: {
+    'brand-name': 'NAQL',
+    'nav.services':'Services','nav.how':'How it works','nav.fleet':'Fleet','nav.drivers':'Drive with us','nav.contact':'Contact',
+    'hero.eyebrow':"Saudi Arabia's Transport Marketplace",
+    'hero.h1':'Move your goods ', 'hero.h1accent':'with a clear price upfront',
+    'hero.lead':'Book a verified driver for furniture, goods, or vehicle transport, and see your final price before you confirm — no surprises, no haggling.',
+    'hero.ctaSoon':'Coming soon on Google Play','hero.ctaDriver':'Drive with NAQL',
+    'hero.stat1':'vehicle types','hero.stat2':'upfront pricing','hero.stat3':'order tracking',
+    'hero.badge':'Verified drivers','hero.pickup':'Pickup','hero.pickupCity':'Riyadh — Al Narjis',
+    'hero.dropoff':'Drop-off','hero.dropoffCity':'Riyadh — Al Malqa','hero.finalPrice':'Final price','hero.sar':' SAR',
+    'services.eyebrow':'Services','services.h2':'Everything you need to move, in one place','services.p':'Pick a category and we match you with the right vehicle and driver automatically.',
+    'services.c1.h':'Household goods','services.c1.p':'Careful furniture and home item transport, with optional packing and assembly.',
+    'services.c2.h':'Commercial freight','services.c2.p':'Store and warehouse shipments with vehicles sized to your load.',
+    'services.c3.h':'Vehicle transport','services.c3.p':'Move a non-running or damaged vehicle with a verified tow truck.',
+    'how.eyebrow':'How NAQL works','how.h2':'Four steps, from request to delivery',
+    'how.s1.h':'Get a price','how.s1.p':'Tell us what you\'re moving and pickup/drop-off, get your final price instantly.',
+    'how.s2.h':'Confirm','how.s2.p':'Review the details and confirm — no hidden fees, no later negotiation.',
+    'how.s3.h':'Get matched','how.s3.p':'We automatically match you with the nearest verified driver with the right vehicle.',
+    'how.s4.h':'Track & rate','how.s4.p':'Follow your order status step by step, then rate your experience.',
+    'fleet.eyebrow':'Fleet','fleet.h2':'The right vehicle for every load','fleet.pickup':'Pickup','fleet.dina':'Dina','fleet.truck':'Truck','fleet.tow':'Tow truck',
+    'drivers.eyebrow':'For drivers & vehicle owners','drivers.h2':'Earn extra income as a verified transport provider',
+    'drivers.p':'Apply with your vehicle (pickup, dina, truck, or tow truck) and start receiving real transport jobs on a schedule you control, once approved.',
+    'drivers.cta':'Apply by email','drivers.l1':'Full control of your schedule — go online or offline anytime','drivers.l2':'Clear earnings balance for every job you complete','drivers.l3':'Direct navigation to pickup and drop-off',
+    'trust.eyebrow':'Why NAQL','trust.h2':'Built to be clear and trustworthy',
+    'trust.i1.h':'Verified drivers','trust.i1.p':'Every driver is reviewed before receiving their first job.',
+    'trust.i2.h':'Transparent pricing','trust.i2.p':'Price is calculated on our servers and shown before you confirm — no surprises.',
+    'trust.i3.h':'Arabic-first support','trust.i3.p':'An experience designed for the Saudi market from day one.',
+    'trust.i4.h':'Currently serving Riyadh','trust.i4.p':'Expanding to more cities soon.',
+    'contact.eyebrow':'Contact','contact.h2':'Have a question, or want to be first to try NAQL?',
+    'contact.p':"Send us a note and we'll follow up about launch, partnerships, or becoming a driver.",'contact.cta':'hello@naqqel.online',
+    'foot.brand':'NAQL','foot.privacy':'Privacy Policy','foot.contact':'Contact',
+    'foot.disclaimer':'NAQL is a technology marketplace connecting customers with independent, verified transport providers. NAQL is not itself a carrier or transport company.',
+    'foot.copyright':'© 2026 NAQL. All rights reserved.'
+  }
+};
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.body.classList.toggle('ltr', lang === 'en');
+  document.getElementById('tab-ar').setAttribute('aria-selected', lang==='ar');
+  document.getElementById('tab-en').setAttribute('aria-selected', lang==='en');
+  const d = dict[lang];
+  document.querySelectorAll('[data-k]').forEach((el) => { const key = el.getAttribute('data-k'); if (d[key] !== undefined) el.textContent = d[key]; });
+  document.getElementById('brand-name').textContent = d['brand-name'];
+  try { localStorage.setItem('naql_lang', lang); } catch (e) {}
+}
+let initialLang = 'ar';
+try { initialLang = localStorage.getItem('naql_lang') || 'ar'; } catch (e) {}
+setLang(initialLang);
+</script>
+</body>
+</html>
